@@ -1,0 +1,188 @@
+############# Chinese navigation ##############
+
+# main menu
+[[main]]
+name = "首页"
+url = ""
+weight = 1
+
+[[main]]
+name = "关于"
+weight = 2
+hasChildren = true
+
+  [[main]]
+  parent = "关于"
+  name = "WFST介绍"
+  url = "about/about/"
+  weight = 1
+
+  [[main]]
+  parent = "关于"
+  name = "望远镜"
+  url = "about/telescope/"
+  weight = 2
+
+  [[main]]
+  parent = "关于"
+  name = "台址"
+  url = "location/"
+  weight = 3
+
+  [[main]]
+  parent = "关于"
+  name = "相机"
+  url = "about/camera/"
+  weight = 4
+
+  [[main]]
+  parent = "关于"
+  name = "团队"
+  url = "about/team/"
+  weight = 5
+
+[[main]]
+name = "科学"
+url = "science/"
+weight = 3
+hasChildren = true
+
+  [[main]]
+  parent ="科学" 
+  name = "时域科学"
+  url = "science/time-domain/"
+  weight = 1
+  
+
+  [[main]]
+  parent = "科学"
+  name = "太阳系天体"
+  url = "science/asteroids-and-the-solar-system/"
+  weight = 2
+  
+
+  [[main]]
+  parent = "科学"
+  name = "银河系及卫星星系"
+  weight = 3
+  url = "science/milky-way-and-its-satellites/"
+
+  [[main]]
+  parent = "科学"
+  name = "星系形成演化与宇宙学"
+  weight = 4
+  url = "science/galaxy-formation-and-cosmology/"
+
+[[main]]
+name = "巡天及数据"
+url = "survey-and-data/"
+weight = 4
+hasChildren = true
+
+  [[main]]
+  parent = "巡天及数据"
+  name = "巡天策略及计划"
+  weight = 1
+  url = "survey-and-data/survey-strategy-and-plan/"
+
+  [[main]]
+  parent = "巡天及数据"
+  name = "数据处理及管理"
+  weight = 2
+  url = "survey-and-data/data-reduction-and-management/"
+  
+  [[main]]
+  parent = "巡天及数据"
+  name = "Alert stream"
+  weight = 3
+  url = "survey-and-data/alert-stream/"
+
+    [[main]]
+  parent = "巡天及数据"
+  name = "数据释放"
+  weight = 4
+  url = "survey-and-data/data-release/"
+
+  
+[[main]]
+weight = 5
+name = "出版及亮点"
+hasChildren = true
+
+  [[main]]
+  parent = "出版及亮点"
+  name = "出版"
+  url = "publications/publication/"
+  weight = 1
+  
+  [[main]]
+  parent = "出版及亮点"
+  name = "亮点研究"
+  url = "publications/highlights/"
+  weight = 2
+
+[[main]]
+weight = 6
+name = "新闻及会议"
+hasChildren = true
+
+  [[main]]
+  parent = "新闻及会议"
+  name = "新闻"
+  url = "news-and-meetings/news/"
+  weight = 1
+
+  [[main]]
+  parent = "新闻及会议"
+  name = "会议"
+  url = "news-and-meetings/meetings/"
+  weight = 2
+
+[[main]]
+weight = 7
+name = "教育及延伸"
+hasChildren = true
+
+  [[main]]
+  parent = "教育及延伸"
+  name = "教育"
+  url = "education-and-outreach/education/"
+  weight = 1
+
+  [[main]]
+  parent = "教育及延伸"
+  name = "多媒体"
+  url = "education-and-outreach/multimedia/"
+  weight = 2
+
+
+# footer menu
+[[footer]]
+name = "关于"
+url = "about/"
+weight = 2
+
+[[footer]]
+name = "科学"
+url = "science/"
+weight = 3
+
+[[footer]]
+name = "巡天及数据"
+url = "survey-and-data/"
+weight = 4
+
+[[footer]]
+name = "出版及亮点"
+url = "publications/"
+weight = 5
+
+[[footer]]
+name = "新闻及会议"
+url = "news-and-meetings/"
+weight = 6
+
+[[footer]]
+name = "教育及延伸"
+url = "education-and-outreach/"
+weight = 7

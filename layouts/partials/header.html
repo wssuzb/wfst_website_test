@@ -1,0 +1,88 @@
+<!-- navigation -->
+<header class="{{if site.Params.navbar_fixed}}sticky-top{{end}} navigation">
+  <div class="container-fluid">
+    <!-- navbar -->
+    <nav class="navbar">
+
+      <div class="navbar-header">
+        <!-- navbar toggler -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation"
+          aria-expanded="true">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- navbar brand/logo -->
+        <a class="navbar-brand" href="{{ relLangURL site.BaseURL   }}">
+          {{ partial "logo.html" . }}
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- menu active -->
+          {{ $currentPage := . }}
+          {{ range site.Menus.main }}
+          {{ $menuURL := .URL | absLangURL }}
+          {{ $pageURL:= $currentPage.Permalink | absLangURL }}
+          {{ $active := eq $menuURL $pageURL }}
+          {{ if .HasChildren }}
+          <li class="nav-item dropdown 
+          {{ range .Children }}
+          {{ $childURL := .URL | absLangURL }}
+          {{ $active := eq $childURL $pageURL }}
+          {{ if $active }}current{{ end }}
+          {{ end }}">
+            {{/* 禁用点击展开<a class="dropdown-toggle" href="#" role="button" data-toggle="" aria-haspopup="true" */}} <a
+              class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              {{ .Name }} <span class="fas fa-angle-down"></span>
+            </a>
+            <ul class="dropdown-menu" style="{{if eq $.Lang `zh`}} width:200px {{else}} width:280px {{end}};">
+              {{ range .Children }}
+              {{ $childURL := .URL | absLangURL }}
+              {{ $active := eq $childURL $pageURL }}
+              <li><a class="dropdown-item {{ if $active }}current{{ end }}" {{if findRE `^http` .URL}}target="_blank"
+                  rel="noopener" {{end}}
+                  href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{
+                  .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+            <a class="nav-link {{ if $active }}current{{ end }}" {{if findRE `^http` .URL}}target="_blank"
+              rel="noopener" {{end}}
+              href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}">{{.Name}}</a>
+          </li>
+          {{ end }}
+          {{ end }}
+          <li>
+            <!-- Language List -->
+            {{/* 取消语言选择下拉菜单,变成点击切换 */}}
+            {{ if .IsTranslated }}
+            {{/* <div style="height:6px"></div> */}}
+            <ul class="{{ cond (eq $.Site.Language.LanguageDirection " rtl") "pr0 ml3" "pl0 mr3" }}"
+              style="padding:6px 5px 6px 5px">
+              {{ range .Translations }}
+              <li class="list f5 f4-ns fw4 dib {{ cond (eq $.Site.Language.LanguageDirection " rtl") "pl3" "pr3" }}">
+                <a class="hover-white no-underline white-90" href="{{ .RelPermalink }}">
+                  {{ if eq .Lang "zh" }}
+                  中
+                  {{else}}
+                  {{.Lang}}
+                  {{end}}
+                </a>
+              </li>
+              {{ end}}
+            </ul>
+      </div>
+      {{ end }}
+      </li>
+      </ul>
+  </div>
+  </nav>
+  </div>
+</header>
+<!-- /navigation -->
+{{ partial "mathjax.html" . }}
