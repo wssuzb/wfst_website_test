@@ -14,7 +14,7 @@
 
 - 下载仓库到本地：`git clone https://github.com/wssuzb/wfst_website_test.git`
 - *该测试主题基于：[airspace-hugo](https://github.com/themefisher/airspace-hugo).*
-- *由于上传限制，需自行下载[airspace-hugo](https://docs.gethugothemes.com/airspace/theme-installation/)主题，解压后拷贝`/airspace-hugo/themes`目录到该测试文件夹下。*
+- *由于上传限制，需自行下载[airspace-hugo](https://docs.gethugothemes.com/airspace/theme-installation/)主题，解压后拷贝`/airspace-hugo/themes`目录到该测试文件夹下。(如遇到下载困难，可联系我提供压缩文件)。*
 - `hugo server -D` # 该命令生成本地页面预览，-D参数为生成draft文件。
 - 修改内容（`.md`文件）只需在`/wfst-hugo-test/content`目录下修改，
 	- 中文`/wfst-hugo-test/content/chinese`
